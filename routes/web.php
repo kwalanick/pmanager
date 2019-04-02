@@ -18,10 +18,16 @@ Route::get('/', function () {
 Route::get('/who',function(){
     return "WTF are you";
 });
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('companies','CompaniesController');
+Route::resource('projects','ProjectsController');
+Route::resource('tasks','TasksController');
+Route::resource('roles','RolesController');
+Route::resource('users','UsersController');
+
+
+
